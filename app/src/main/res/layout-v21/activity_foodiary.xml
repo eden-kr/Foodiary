@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.foodiary.view.FoodiaryActivity">
+
+    <FrameLayout
+        android:id="@+id/main_frame"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="9"
+       />
+
+    <com.google.android.material.tabs.TabLayout
+        android:layout_width="match_parent"
+        android:background="@drawable/nav_bar"
+        android:layout_height="0dp"
+        android:id="@+id/tabBar"
+        app:tabTextColor="@color/click"
+        app:tabIndicatorColor="#00FFFFFF"
+        app:tabIconTint="@color/click"
+        app:tabSelectedTextColor="@color/myPageEditText"
+        app:tabRippleColor="@null"
+        android:layout_weight="1">
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/home"
+            android:text="홈"
+            android:icon="@drawable/nav_home"
+            />
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/statistics"
+            android:text="통계"
+            android:icon="@drawable/nav_stat"/>
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/memo"
+            android:text="메모"
+            android:icon="@drawable/nav_memo"/>
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/setting"
+            android:text="마이페이지"
+            android:icon="@drawable/nav_my"/>
+
+    </com.google.android.material.tabs.TabLayout>
+
+</LinearLayout>

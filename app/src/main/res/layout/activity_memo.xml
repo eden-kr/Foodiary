@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#FFFFFF"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.foodiary.view.MemoActivity">
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/complete_memo"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentRight="true"
+        android:layout_margin="10dp"
+        android:visibility="invisible"
+        app:lottie_autoPlay="false"
+        app:lottie_fileName="check.json"
+        app:lottie_loop="false" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/memo_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/back_memo"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:clickable="true"
+                android:src="@drawable/back" />
+
+            <TextView
+                android:id="@+id/complete_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginRight="15dp"
+                android:clickable="true"
+                android:gravity="center"
+                android:text="완료"
+                android:textColor="#3F51B5"
+                android:textSize="15sp" />
+
+        </FrameLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/memo_theme"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/memo_edit"
+            app:layout_constraintVertical_bias="0.952">
+
+            <ImageView
+                android:id="@+id/yello_memo"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/yello_memo"
+                android:clickable="true" />
+
+            <ImageView
+                android:id="@+id/pink_memo"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/pink_memo"
+                android:clickable="true" />
+
+            <ImageView
+                android:id="@+id/white_memo"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/white_round_stroke"
+                android:clickable="true" />
+
+            <ImageView
+                android:id="@+id/sky_memo"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/blue_memo"
+                android:clickable="true" />
+
+            <ImageView
+                android:id="@+id/purple_memo"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/purple_memo"
+                android:clickable="true" />
+
+            <ImageView
+                android:id="@+id/monun_yellow"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/round_no_color"
+                android:clickable="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/monun_green" />
+
+            <ImageView
+                android:id="@+id/monun_green"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/round_no_color"
+                android:clickable="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/monun_yellow" />
+
+            <ImageView
+                android:id="@+id/monun_white"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/round_no_color"
+                android:clickable="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/monun_white" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/round_no_color"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.201">
+
+            <TextView
+                android:id="@+id/t1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/complete_memo"
+                android:layout_weight="1"
+                android:fontFamily="@font/gmarket_bold"
+                android:text=" Memo"
+
+                android:textSize="25dp"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="273dp" />
+
+            <TextView
+                android:id="@+id/memo_date"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/gmarket_bold"
+                android:text="2020.08.09"
+                android:gravity="right"
+                android:layout_marginRight="10dp"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="261dp" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/memo_edit"
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:layout_below="@id/memo_theme"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="30dp"
+            android:background="@drawable/purple_memo"
+            android:fontFamily="@font/nanum_gothic"
+            android:gravity="top"
+            android:lineSpacingExtra="10dp"
+            android:lines="10"
+            android:padding="18dp"
+            android:textSize="18dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/linearLayout5"
+            app:layout_constraintVertical_bias="0.12" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.foodiary.view.KcalSettingActivity">
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/close_black"
+            android:id="@+id/back_kcal"
+            android:clickable="true"
+            android:focusable="true" />
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.5"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/gradient">
+
+        <TextView
+            android:id="@+id/foodName_kcal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="56dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/nanum_gothic_bold"
+            android:gravity="center"
+            android:text="컵케이크"
+            android:textSize="25dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/kcal_kcal"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/foodName_kcal"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:background="@drawable/foodiary_round"
+            android:fontFamily="@font/gmarket_bold"
+            android:gravity="center"
+            android:text="0 kcal"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/foodName_kcal"
+            app:layout_constraintVertical_bias="0.414" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/gradient"
+        android:layout_marginEnd="30dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="탄수화물\n0 g"
+            android:id="@+id/carbo_kcal"
+            android:gravity="center"
+            android:layout_weight="1"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="단백질\n0 g"
+            android:id="@+id/protein_kcal"
+            android:gravity="center"
+            android:layout_weight="1"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/fat_kcal"
+            android:text="지방\n0 g"
+            android:gravity="center"
+            android:layout_weight="1"/>
+    </LinearLayout>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:gravity="right|center"
+        android:id="@+id/gram_kcal"
+        android:fontFamily="@font/nanum_gothic"
+        android:drawablePadding="10dp"
+        android:padding="10dp"
+        android:drawableRight="@drawable/gram"
+        android:background="@drawable/gradient"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="40dp"
+        android:layout_marginLeft="40dp"
+        android:text="추가"
+        android:textSize="18sp"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="50dp"
+        android:stateListAnimator="@null"
+        android:fontFamily="@font/nanum_gothic_bold"
+        android:id="@+id/add_kcal"
+        android:background="@drawable/foodiary_round"
+        />
+
+</LinearLayout>

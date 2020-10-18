@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="#FFFFFF"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:fontFamily="@font/gmarket_bold"
+        android:text="Statistic"
+        android:textSize="@dimen/top_title_size"
+        android:layout_marginTop="30dp"
+        android:gravity="center|left"
+        android:layout_marginLeft="30dp"
+        android:textColor="@color/myPageEditText" />
+    <com.github.mikephil.charting.charts.BarChart
+        android:id="@+id/step_chart"
+        android:layout_width="match_parent"
+        android:layout_weight="2"
+        android:layout_marginTop="10dp"
+        android:layout_height="0dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:clickable="false" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#151515"
+        android:layout_gravity="center"
+        android:fontFamily="@font/nanum_gothic"
+        android:text="주간 걸음 수" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:background="#D5D5D5"
+        android:layout_margin="10dp"/>
+
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/chart"
+        android:layout_width="match_parent"
+        android:layout_weight="2"
+        android:layout_height="0dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:clickable="false" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:textColor="#151515"
+        android:layout_gravity="center"
+        android:fontFamily="@font/nanum_gothic"
+        android:text="주간 칼로리 기록"/>
+
+</LinearLayout>

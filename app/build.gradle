@@ -1,0 +1,100 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'realm-android'
+apply plugin: 'com.google.gms.google-services'
+
+
+def lifecycle_version = "1.1.1"
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.3"
+
+    defaultConfig {
+        applicationId "com.example.Foodiary"
+        minSdkVersion 19
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    configurations.all {
+        resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+            def requested = details.requested
+            if (requested.group == "androidx.appcompat") {
+                if (!requested.name.startsWith("multidex")) {
+                    details.useVersion "1.+"
+                }
+            }
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'com.google.android.gms:play-services-ads:19.4.0'
+    implementation 'androidx.core:core-ktx:1.3.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.0'
+    implementation 'com.google.firebase:firebase-storage:16.0.4'
+    testImplementation 'junit:junit:4.13'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    implementation "android.arch.lifecycle:extensions:$lifecycle_version"
+    implementation 'net.sourceforge.jtds:jtds:1.3.1'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    implementation 'androidx.recyclerview:recyclerview-selection:1.1.0-rc01'
+    implementation 'com.squareup.retrofit2:converter-gson:2.6.2'
+    implementation 'com.squareup.retrofit2:retrofit:2.6.2'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.0'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.3.0'
+    implementation 'androidx.core:core-ktx:1.3.1'
+    implementation 'io.reactivex.rxjava2:rxkotlin:2.4.0'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
+    implementation 'com.jakewharton.rxbinding3:rxbinding:3.1.0'
+    implementation 'com.uniquext.android:rxlifecycle:2.0.0'
+    implementation 'com.facebook.android:facebook-login:5.15.3'
+    //facebook Login
+    implementation 'com.kakao.sdk:v2-user:2.0.2'
+    //kakao Login
+    implementation 'com.kakao.sdk:usermgmt:1.27.0'
+    implementation 'androidx.preference:preference:1.1.1'
+    implementation 'com.dinuscxj:circleprogressbar:1.3.0'
+    implementation 'com.akexorcist:round-corner-progress-bar:2.1.1'
+    implementation 'androidx.multidex:multidex:2.0.1'
+    //64k Reference
+    implementation 'com.google.firebase:firebase-auth:19.3.2'
+    implementation 'com.google.android.gms:play-services-auth:18.1.0'
+    //googleLogin
+    implementation 'com.google.firebase:firebase-storage-ktx:19.2.0'
+    //FirebaseStorage
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+    //CircleView
+    implementation 'com.jakewharton.rxbinding:rxbinding:0.3.0'
+    //RxView
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    //picasso
+    implementation 'androidx.viewpager2:viewpager2:1.0.0'
+    implementation 'com.airbnb.android:lottie:3.4.0'
+    implementation 'com.google.android.gms:play-services-fitness:19.0.0'
+    implementation 'com.google.android.gms:play-services-auth:18.1.0'
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+    implementation 'com.prolificinteractive:material-calendarview:1.4.3'
+    implementation 'com.jakewharton.threetenabp:threetenabp:1.2.1'
+    implementation files('libs/com.skt.Tmap_1.66.jar')
+}

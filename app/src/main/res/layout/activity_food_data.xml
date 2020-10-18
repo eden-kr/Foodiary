@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/layout1"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical"
+    tools:context="com.example.foodiary.view.FoodDataActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        app:elevation="0dp">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/foodData_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp">
+
+            <TextView
+                android:id="@+id/list_foodData"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/yellow_drawble"
+                android:clickable="true"
+                android:gravity="center"
+                android:text="0"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold" />
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_marginLeft="30dp">
+                <TextView
+                    android:id="@+id/foodData_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/gmarket_medium"
+                    android:gravity="bottom"
+                    android:textColor="@color/myPageEditText"
+                    android:textSize="20dp" />
+            </FrameLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
+        <EditText
+            android:id="@+id/search_data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_weight="1"
+            android:layout_gravity="center|bottom"
+            android:background="@drawable/round_gray_login"
+            android:drawableLeft="@drawable/search"
+            android:hint="  음식을 검색하세요"
+            android:inputType="textNoSuggestions"
+            android:padding="10dp"
+            android:textSize="18dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:layout_gravity="right|center"
+                android:text="취소"
+                android:fontFamily="@font/nanum_gothic"
+                android:layout_marginRight="30dp"
+                android:visibility="invisible"
+                android:clickable="false"
+                android:id="@+id/cancel"/>
+        </FrameLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/complete_food_data"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentRight="true"
+        android:layout_margin="10dp"
+        android:visibility="invisible"
+        app:lottie_autoPlay="false"
+        app:lottie_fileName="check.json"
+        app:lottie_loop="false" />
+
+    <ImageView
+        android:id="@+id/selectImage_data"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_below="@id/appbar"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_weight="2"
+        android:background="@drawable/round_gray_login"
+        android:scaleType="centerInside"
+        android:src="@drawable/image" />
+
+    <FrameLayout
+        android:id="@+id/memo_frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/selectImage_data"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="30dp"
+        android:orientation="horizontal">
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/drawer"
+        android:layout_width="match_parent"
+        android:layout_height="450dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/round"
+        android:elevation="100dp"
+        android:orientation="vertical"
+        android:visibility="invisible">
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/round">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/nanum_gothic"
+                android:gravity="center"
+                android:text="내 목록"
+                android:textSize="17dp" />
+
+            <ImageView
+                android:id="@+id/close_drawer"
+                android:layout_width="20dp"
+                android:layout_height="30dp"
+                android:layout_gravity="right|center"
+                android:layout_marginEnd="20dp"
+                android:src="@drawable/close_black" />
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2px"
+            android:background="#BABABA" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/data_drawer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+
+    </LinearLayout>
+
+</RelativeLayout>

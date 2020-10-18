@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="#FFFFFF"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:id="@+id/myImage"
+            android:clickable="true"
+            android:src="@drawable/my"
+            app:civ_border_width="2dp"
+            app:civ_border_color="#A8A8A8"
+            android:layout_marginBottom="20dp"
+            android:focusable="true" />
+        <TextView
+            android:id="@+id/myPage_nickname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nanum_gothic"
+            android:text="김예하"
+            android:textColor="#292929"
+            android:textSize="18dp" />
+
+        <TextView
+            android:id="@+id/myPage_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/nanum_gothic"
+            android:text="kzx789@naver.com"
+            android:textSize="18dp" />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="#E1E1E1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout4"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view"
+        app:layout_constraintVertical_bias="0.0">
+
+        <TextView
+            android:id="@+id/myPage_revise_data"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="15dp"
+            android:clickable="true"
+            android:drawableRight="@drawable/ic_chevron_right_black_24dp"
+            android:focusable="true"
+            android:fontFamily="@font/nanum_gothic"
+            android:gravity="center|left"
+            android:text="정보 수정"
+            android:textColor="#393939"
+            android:textSize="18dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#E1E1E1" />
+
+        <TextView
+            android:id="@+id/myPage_ask"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="15dp"
+            android:clickable="true"
+            android:drawableRight="@drawable/ic_chevron_right_black_24dp"
+            android:focusable="true"
+            android:fontFamily="@font/nanum_gothic"
+            android:gravity="center|left"
+            android:text="문의하기"
+            android:textColor="#393939"
+            android:textSize="18dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="#E1E1E1" />
+
+        <TextView
+            android:id="@+id/myPage_logout"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="15dp"
+            android:clickable="true"
+            android:textColor="#393939"
+            android:drawableRight="@drawable/ic_chevron_right_black_24dp"
+            android:focusable="true"
+            android:fontFamily="@font/nanum_gothic"
+            android:gravity="center|left"
+            android:text="로그아웃"
+            android:textSize="18dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#E1E1E1" />
+
+        <TextView
+            android:id="@+id/myPage_delete_account"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:textColor="#8A8A8A"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/nanum_gothic"
+            android:text="회원탈퇴"
+            android:textSize="15dp" />
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

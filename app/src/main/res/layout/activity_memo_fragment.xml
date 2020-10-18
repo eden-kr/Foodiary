@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF"
+        android:id="@+id/memo_background">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:id="@+id/r_date"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="10dp"
+        android:orientation="horizontal"
+        android:layout_alignParentTop="true"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/memo_left"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginRight="20dp"
+            android:clickable="true"
+            android:src="@drawable/left" />
+
+        <TextView
+            android:id="@+id/memo_today"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_toRightOf="@id/memo_left"
+            android:fontFamily="@font/gmarket_bold"
+            android:gravity="center"
+            android:text="2020 09 12"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:id="@+id/memo_right"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_toRightOf="@id/memo_today"
+            android:layout_marginLeft="10dp"
+            android:clickable="true"
+            android:src="@drawable/right" />
+        <ImageView
+            android:id="@+id/create_memo"
+            android:layout_width="28dp"
+            android:layout_toLeftOf="@+id/memo_calendar"
+            android:layout_marginRight="20dp"
+            android:layout_height="28dp"
+            android:clickable="false"
+            android:visibility="gone"
+            android:layout_centerInParent="true"
+            android:src="@drawable/pencil" />
+        <ImageView
+            android:id="@+id/memo_calendar"
+            android:layout_width="28dp"
+            android:layout_marginRight="20dp"
+            android:layout_height="25dp"
+            android:layout_centerInParent="true"
+            android:layout_alignParentRight="true"
+            android:clickable="true"
+            android:focusable="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/calendar" />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_below="@id/r_date"
+        android:id="@+id/r1"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="10dp"
+        android:layout_height="100dp">
+        <!-- 아침 -->
+        <ImageView
+            android:id="@+id/breakfast_memo"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/memodefault" />
+
+        <TextView
+            android:id="@+id/achim"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nanum_gothic_bold"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/breakfast_memo"
+            android:text="아침"
+            android:layout_marginLeft="20dp"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/breakCal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/breakfast_memo"
+            android:layout_below="@id/achim"
+            android:text="0 cal"
+            android:textSize="18dp" />
+
+        <TextView
+            android:id="@+id/rec_breakCal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/breakfast_memo"
+            android:layout_below="@id/breakCal"
+            android:text="권장 : 400 cal"
+            android:textSize="17dp" />
+    </RelativeLayout>
+    <!-- 점심 -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:id="@+id/r2"
+        android:layout_marginLeft="20dp"
+        android:layout_below="@id/r1"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/lunch_memo"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="10dp"
+            android:src="@drawable/memodefault" />
+
+        <TextView
+            android:id="@+id/junsim"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nanum_gothic_bold"
+            android:layout_marginLeft="20dp"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/lunch_memo"
+            android:text="점심"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/lunchCal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginLeft="20dp"
+            android:layout_below="@id/junsim"
+            android:layout_toRightOf="@id/lunch_memo"
+            android:text="0 cal"
+            android:textSize="18dp" />
+
+        <TextView
+            android:id="@+id/rec_lunchCal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:text="권장 : 400 cal"
+            android:layout_toRightOf="@id/lunch_memo"
+            android:layout_below="@id/lunchCal"
+            android:textSize="17dp" />
+    </RelativeLayout>
+
+    <!-- 저녁 -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:id="@+id/r3"
+        android:layout_marginLeft="20dp"
+        android:layout_below="@id/r2"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/dinner_memo"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="10dp"
+            android:src="@drawable/memodefault" />
+
+        <TextView
+            android:id="@+id/din"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nanum_gothic_bold"
+            android:gravity="center"
+            android:layout_toRightOf="@+id/dinner_memo"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:text="저녁"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/dinnerCal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_toRightOf="@id/dinner_memo"
+            android:layout_below="@id/din"
+            android:layout_marginLeft="20dp"
+            android:text="0 cal"
+            android:textSize="18dp" />
+
+        <TextView
+            android:id="@+id/rec_dinnerCal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_toRightOf="@+id/dinner_memo"
+            android:layout_below="@id/dinnerCal"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:text="권장 : 400 cal"
+            android:textSize="17dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:id="@+id/r4"
+        android:layout_below="@id/r3"
+        android:layout_marginLeft="20dp"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/snack_memo"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="10dp"
+            android:src="@drawable/memodefault" />
+
+        <TextView
+            android:id="@+id/goaza"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nanum_gothic"
+            android:gravity="center"
+            android:text="간식"
+            android:layout_toRightOf="@id/snack_memo"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/snackCal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/goaza"
+            android:layout_toRightOf="@id/snack_memo"
+            android:gravity="center"
+            android:layout_marginLeft="20dp"
+            android:text="0 cal"
+            android:textSize="18dp" />
+    </RelativeLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/calendar_drawer"
+        android:layout_width="match_parent"
+        android:layout_height="480dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/round"
+        android:elevation="100dp"
+        android:orientation="vertical"
+        android:visibility="invisible">
+
+        <ImageView
+            android:id="@+id/close_calendar"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="right|top"
+            android:layout_margin="20dp"
+            android:clickable="true"
+            android:src="@drawable/close_black" />
+
+        <com.prolificinteractive.materialcalendarview.MaterialCalendarView
+            android:id="@+id/myCalendar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:mcv_selectionColor="#DADADA" />
+    </LinearLayout>
+</RelativeLayout>

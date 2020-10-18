@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name = "top_title_size">35dp</dimen>
+    <dimen name="title_size">25dp</dimen>
+    <dimen name ="nutrient_text_size">14dp</dimen>
+    <dimen name="total_kcal_bar_size">220dp</dimen>
+
+
+    <dimen name="memo_icon_size">100dp</dimen>
+
+</resources>

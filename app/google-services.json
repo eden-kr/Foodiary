@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "646723644237",
+    "firebase_url": "https://foodiary-d2a23.firebaseio.com",
+    "project_id": "foodiary-d2a23",
+    "storage_bucket": "foodiary-d2a23.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:646723644237:android:0cd977c26574641559a504",
+        "android_client_info": {
+          "package_name": "com.example.Foodiary"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "646723644237-erjmtfq4idssnkb7scn4c5813d7h6rsj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.Foodiary",
+            "certificate_hash": "de928adde069dda00298ccb85b3945336e045945"
+          }
+        },
+        {
+          "client_id": "646723644237-f3tv5fpra9rv21h9rkdjj5dlkirc53ks.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCOl7mruROdsgJADdhSL001j3O885TtdKQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "646723644237-f3tv5fpra9rv21h9rkdjj5dlkirc53ks.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

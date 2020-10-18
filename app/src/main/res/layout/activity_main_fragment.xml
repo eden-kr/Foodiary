@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.foodiary.fragment.AppMainFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center|top"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:fontFamily="@font/nanum_gothic_bold"
+            android:text="Today"
+            android:layout_weight="1"
+            android:layout_margin="35dp"
+            android:textSize="35dp"
+            android:gravity="center|left"
+            android:layout_marginLeft="30dp"
+            android:textColor="@color/myPageEditText" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center|top"
+            android:layout_margin="20dp"
+            android:background="@drawable/gradient"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/today"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:fontFamily="@font/nanum_gothic"
+                android:gravity="center"
+                android:text="2020-09-04"
+                android:textSize="25dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="15dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/today_yoil"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:fontFamily="@font/nanum_gothic"
+                    android:text="Tuesday"
+                    android:textSize="20dp" />
+
+                <ImageView
+                    android:id="@+id/next"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:clickable="true"
+                    android:src="@drawable/ic_chevron_right_black_24dp" />
+            </LinearLayout>
+
+            <com.dinuscxj.progressbar.CircleProgressBar
+                android:id="@+id/circlebar"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                app:progress_end_color="#F8D800"
+                app:progress_start_color="#FDEB71"
+                app:progress_stroke_cap="round"
+                app:progress_stroke_width="20dp"
+                app:progress_text_color="#FFC107"
+                app:progress_text_size="30dp"
+                app:style="solid_line" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:padding="10dp"
+                android:gravity="center"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="#555555"
+                        android:fontFamily="@font/nanum_gothic"
+                        android:gravity="left"
+                        android:text="  탄수화물" />
+
+                    <com.akexorcist.roundcornerprogressbar.TextRoundCornerProgressBar
+                        android:id="@+id/carbohydrate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        app:rcBackgroundColor="#E4E4E4"
+                        app:rcBackgroundPadding="2dp"
+                        app:rcMax="300"
+                        app:rcProgressColor="#F8D800"
+                        app:rcRadius="10dp"
+
+                        app:rcTextProgressColor="#4C4C4C" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="#555555"
+                        android:fontFamily="@font/nanum_gothic"
+                        android:gravity="left"
+                        android:text="  단백질" />
+
+                    <com.akexorcist.roundcornerprogressbar.TextRoundCornerProgressBar
+                        android:id="@+id/protein"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        app:rcBackgroundColor="#E4E4E4"
+                        app:rcBackgroundPadding="2dp"
+                        app:rcMax="130"
+                        app:rcProgressColor="#F8D800"
+                        app:rcRadius="10dp"
+                        app:rcTextProgressColor="#4C4C4C" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="#555555"
+                        android:fontFamily="@font/nanum_gothic"
+                        android:gravity="left"
+                        android:text="  지방" />
+
+                    <com.akexorcist.roundcornerprogressbar.TextRoundCornerProgressBar
+                        android:id="@+id/fat"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        app:rcBackgroundColor="#E4E4E4"
+                        app:rcBackgroundPadding="2dp"
+                        app:rcMax="51"
+                        app:rcProgressColor="#F8D800"
+                        app:rcRadius="10dp"
+                        app:rcTextProgressColor="#4C4C4C" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_gravity="top|center"
+            android:background="@drawable/gradient"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="25dp">
+
+                <TextView
+                    android:id="@+id/step"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="@font/nanum_gothic_bold"
+                    android:text="1024"
+                    android:textSize="40dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/step"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="@color/myPageEditText"
+                    android:layout_toRightOf="@+id/step"
+                    android:fontFamily="@font/nanum_gothic"
+                    android:text="step"
+                    android:textSize="18dp" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/nanum_gothic"
+                        android:gravity="center"
+                        android:text="소모 칼로리"
+                        android:textSize="18dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/nanum_gothic"
+                        android:gravity="center"
+                        android:text="이동 거리"
+                        android:textSize="18dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center">
+
+                        <TextView
+                            android:id="@+id/consumeCal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:fontFamily="@font/nanum_gothic"
+                            android:gravity="center"
+                            android:text="1024"
+                            android:textSize="25dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBottom="@id/consumeCal"
+                            android:layout_marginLeft="10dp"
+                            android:layout_toRightOf="@id/consumeCal"
+                            android:fontFamily="@font/nanum_gothic"
+                            android:text="kcal"
+                            android:textSize="18dp" />
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/movingDistance"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/nanum_gothic"
+                        android:gravity="center"
+                        android:text="6 km"
+                        android:textSize="25dp" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:background="@drawable/gradient"
+            android:layout_margin="20dp"
+            android:layout_height="150dp">
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/nanum_gothic_bold"
+                android:text="Total kcal"
+                android:textSize="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.067"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.akexorcist.roundcornerprogressbar.TextRoundCornerProgressBar
+                android:id="@+id/totalCal"
+                android:layout_width="247dp"
+                android:layout_height="39dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="24dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView6"
+                app:rcBackgroundColor="#E4E4E4"
+                app:rcBackgroundPadding="2dp"
+                app:rcMax="100"
+                app:rcProgressColor="#F8D800"
+                app:rcRadius="10dp"
+                app:rcTextProgressColor="#4C4C4C" />
+
+            <TextView
+                android:id="@+id/totalCalText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2776 kcal"
+                android:textSize="18dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.34"
+                app:layout_constraintStart_toEndOf="@+id/totalCal"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.714" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </LinearLayout>
+</ScrollView>
