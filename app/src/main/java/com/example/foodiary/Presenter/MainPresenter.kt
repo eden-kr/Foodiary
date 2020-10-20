@@ -39,26 +39,6 @@ class MainPresenter() :MainContract.Presenter{
 
     }
 
-    //email 로그인
-    override fun clickLogin(email: String, pw: String, context: Context) {
-        val activity = context as Activity
-        firebaseUser?.signInWithEmailAndPassword(email,pw)
-            ?.addOnCompleteListener(activity){ task->
-                if(task.isSuccessful){
-                   //setLoginSession(context,email)
-                    val intent = Intent(context,FoodiaryActivity::class.java)
-                    intent.putExtra("email",email)
-                    context.startActivity(intent)
-                }else{
-                    Toast.makeText(activity,"아이디, 비밀번호를 확인해주세요.",Toast.LENGTH_SHORT).show()
-                }
-            }
-    }
-
-    override fun forgetPassword(context: Context) {
-        //intent
-    }
-
     override fun emailLogin(context: Context) {
         val intent = Intent(context, SignUpActivity::class.java)
         context.startActivity(intent)

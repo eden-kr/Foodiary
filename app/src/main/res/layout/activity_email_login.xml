@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.foodiary.view.EmailLoginActivity">
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/back"
+            android:clickable="true"
+            android:id="@+id/back_loginEmail"/>
+    </androidx.appcompat.widget.Toolbar>
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="top"
+        android:layout_marginTop="15dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_gravity="left"
+            android:layout_marginLeft="32dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/gmarket_bold"
+            android:text="이메일 로그인"
+            android:textColor="#959595"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+
+
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|center"
+            android:layout_marginLeft="30dp"
+            android:textColorHint="#B5B5B5"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="20dp"
+            android:hint=" 이메일을 입력해주세요." />
+
+        <EditText
+            android:id="@+id/pw"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|center"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:hint=" 비밀번호를 입력해주세요."
+            android:inputType="textWebPassword"
+            android:textColorHint="#B5B5B5" />
+
+        <TextView
+            android:id="@+id/forget_pw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|bottom"
+            android:layout_marginRight="30dp"
+            android:clickable="true"
+            android:fontFamily="@font/nanum_gothic"
+            android:gravity="right"
+            android:text="비밀번호를 잊으셨나요?"
+            android:textColor="#3E3E3E" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/logIn_email"
+            android:background="@color/foodiary"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="40dp"
+            android:stateListAnimator="@null"
+            android:text="로그인"
+            android:fontFamily="@font/gmarket_bold"
+            android:textColor="#FFFFFF"/>
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -31,6 +31,7 @@ class FoodDataContract {
         fun updateRecyclerView(intent : Intent)
         fun setLottie()
         fun moveToolbar()
+        fun showLoadingProgress()
         fun restoreToolbar()
     }
     interface Presenter{
@@ -43,6 +44,7 @@ class FoodDataContract {
         fun getSearchImage(context: Context)
         fun dispose()
         fun setAds(context: Context)
+        fun resizeFile(context: Context, uri : Uri) : String
         fun checkListSize(list : ArrayList<FoodDataPOJO>) : Boolean
         fun replace(fragmentManager: FragmentManager,fragment : Fragment)
         fun setBroadCastReceiver(context: Context,receiver: BroadcastReceiver)

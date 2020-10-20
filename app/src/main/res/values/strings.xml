@@ -1,12 +1,15 @@
 <resources>
     <string name="app_name">Foodiary</string>
-    <string name="admob_id"></string>
+    <string name="admob_id">ca-app-pub-5265062400811184~4043660010</string>
     <string name="test_admob_id">ca-app-pub-3940256099942544/6300978111</string>
-    <string name="facebook_app_id"></string>
-    <string name="nutrient_db_key"></string>
-    <string name="kakao_api_key"></string>
-    <string name="fb_login_protocol_scheme"></string>
-    <string name="tmap_api_key"></string>
+    <string name="facebook_app_id">1697732700377832</string>
+    <string name="nutrient_db_key">9ebd6a21778a4eeeb7a8</string>
+    <string name="kakao_api_key">7053a77ef28066474282cb5f3207943b</string>
+    <string name="fb_login_protocol_scheme">fb1697732700377832</string>
+    <string name="tmap_api_key">l7xx1943341d7ef04b768d958992bd1c06c3</string>
     <string name="withdraw_toolbar_name">회원탈퇴</string>
     <string name="complete">완료</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

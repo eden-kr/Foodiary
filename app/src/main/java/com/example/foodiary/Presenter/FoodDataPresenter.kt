@@ -4,11 +4,17 @@ import android.Manifest
 import android.app.Activity
 import android.content.*
 import android.content.pm.PackageManager
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
+import android.graphics.ImageDecoder
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
+import android.os.Handler
 import android.provider.MediaStore
 import android.util.Log
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
@@ -26,6 +32,7 @@ import com.google.android.gms.ads.AdListener
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.InterstitialAd
 import com.google.android.gms.ads.LoadAdError
+import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.rxkotlin.addTo
@@ -36,7 +43,9 @@ import okhttp3.RequestBody
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import java.io.File
+import java.io.*
+import java.util.*
+import kotlin.collections.ArrayList
 
 class FoodDataPresenter : FoodDataContract.Presenter {
     private var view : FoodDataContract.View? = null
@@ -72,13 +81,13 @@ class FoodDataPresenter : FoodDataContract.Presenter {
 
     override fun getFoodData(foodName: String) {        //foodAdapter와 통신
         val server = retrofit.getInstance()         //Retrofit!
+
         server.getFoodData(foodName).enqueue(object : Callback<List<FoodDataPOJO>>{
             override fun onFailure(call: Call<List<FoodDataPOJO>>, t: Throwable) {
                 Log.d("myTag","get Food data is failed.. ${t.printStackTrace()}")
-                throw t
+
             }
             override fun onResponse(call: Call<List<FoodDataPOJO>>, response: Response<List<FoodDataPOJO>>) {
-                Log.d("myTag",response.body()?.size.toString())
                 if(response.body()!=null) {
                     val res = response.body() as ArrayList<FoodDataPOJO>
                     view?.returnFragmentManager()
@@ -92,33 +101,70 @@ class FoodDataPresenter : FoodDataContract.Presenter {
        repo.setCalData(context,type)
     }
 
+    @RequiresApi(Build.VERSION_CODES.P)
     override fun uriToFile(context: Context, uri: Uri) {
         val dt: Array<String> = arrayOf(MediaStore.Images.Media.DATA)
         val c = context.contentResolver.query(uri, dt, null, null, null)
         val index = c?.getColumnIndex(MediaStore.Images.Media.DATA)
         c?.moveToFirst()
         myFile = File(index?.let { c?.getString(it) }!!)
-        getFlaskData(context,myFile)
+      //  getFlaskData(context,myFile)
     }
+    //resize the Bitmap Image
+    @RequiresApi(Build.VERSION_CODES.P)
+     override fun resizeFile(context: Context, uri : Uri) : String{
+        val path = context.cacheDir
+        val name = "userImage.jpg"
+        val tempFile = File(path,name)
+        try {
+            tempFile.createNewFile()
+            val source = ImageDecoder.createSource(context.contentResolver, uri);
+            var bitmap = ImageDecoder.decodeBitmap(source)
+            val width = bitmap.width
+            val height = bitmap.height
+            val os = FileOutputStream(tempFile)
+            bitmap = Bitmap.createScaledBitmap(bitmap, 128, height / (width / 128), true)
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 90, os)
+            os.close()
+        }catch (e : FileNotFoundException){
+            throw e
+        }catch (e : IOException){
+            throw e
+        }
 
+
+        return tempFile.absolutePath
+    }
     override fun getFlaskData(context: Context,file: File) {
         val requestBody = RequestBody.create(MediaType.parse("image/*"),file)
         val body = MultipartBody.Part.createFormData("file","file",requestBody)
+        val activity = context as Activity
+        //Loading Progress using Lottie
+            val task = object : TimerTask(){
+                override fun run() {
+                    view?.showLoadingProgress()
+                }
+            }
+            val timer = Timer()
+            timer.schedule(task,5000)
+        //communicate the server
 
         RxRetrofit.getInstance()?.getNutrientFromImage(body)
             ?.subscribeOn(Schedulers.io())
             ?.observeOn(AndroidSchedulers.mainThread())
-            ?.subscribe { it ->
+            ?.subscribe ({ it ->
                 if(it.isNotEmpty()) {
                     val intent = Intent(context, KcalSettingActivity::class.java)
                     val bundle = Bundle()
                     bundle.putSerializable("item", it[0])
                     intent.putExtra("bundle", bundle)
                     context.startActivity(intent)
+                    activity.finish()
                 }else{
                     Toast.makeText(context,"이미지 분석에 실패했어요.",Toast.LENGTH_SHORT).show()
                 }
-            }?.apply { compositeDisposable.add(this) }?.let { it1 ->
+            },{
+            })?.apply { compositeDisposable.add(this) }?.let { it1 ->
                 compositeDisposable.add(
                     it1
                 )

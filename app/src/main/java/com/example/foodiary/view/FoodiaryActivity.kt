@@ -24,15 +24,19 @@ class FoodiaryActivity : AppCompatActivity(),FoodiaryContract.View {
 
     val presenter by lazy { FoodiaryPresenter() }
     private val manager = supportFragmentManager
+    @RequiresApi(Build.VERSION_CODES.M)
     override fun onResume() {
         super.onResume()
         val intent = intent
         val type = intent?.getStringExtra("type")
 
-        if(type !=null){
+        if(type !=null ){
             val mPresenter = MemoPresenter()
             mPresenter.attachView(memoView)
             presenter.replace(manager, memoView)
+            tabBar.getTabAt(2)?.select()
+            //tabBar.getTabAt(2)?.
+
         }else{
             val mPresenter = AppMainPresenter()
             mPresenter.attachView(mainView)

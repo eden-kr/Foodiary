@@ -9,6 +9,9 @@ import io.realm.RealmConfiguration
 
 class LoginRepository {
     private val realm = Realm.getDefaultInstance()
+    fun getUserInfo(email: String) : UserDTO? {
+        return realm.where(UserDTO::class.java).equalTo("email",email).findFirst()
+    }
     //유저 정보 생성
     fun insertUser(email : String, nickname : String) {
         realm.executeTransactionAsync ({ realm ->

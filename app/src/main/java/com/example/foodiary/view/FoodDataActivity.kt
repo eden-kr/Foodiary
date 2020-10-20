@@ -36,10 +36,12 @@ import com.example.foodiary.Receiver.FoodDataReceiver
 import com.example.foodiary.Repository.Remote.FoodDataPOJO
 import com.example.foodiary.etc.RecyclerDecoration
 import com.example.foodiary.fragment.FoodDataFragment
+import com.example.foodiary.fragment.LoadingFragment
 import com.example.foodiary.myList
 import com.jakewharton.rxbinding.view.RxView
 import kotlinx.android.synthetic.main.activity_check_food_list.*
 import kotlinx.android.synthetic.main.activity_food_data.*
+import java.io.File
 
 
 class FoodDataActivity : AppCompatActivity(), FoodDataContract.View {
@@ -272,6 +274,10 @@ class FoodDataActivity : AppCompatActivity(), FoodDataContract.View {
         cancel.isClickable = true
     }
 
+    override fun showLoadingProgress() {
+        LoadingFragment.getInstance().show(supportFragmentManager,"")
+    }
+
     override fun restoreToolbar() {
         supportActionBar?.show()
         cancel.visibility = View.INVISIBLE
@@ -281,7 +287,8 @@ class FoodDataActivity : AppCompatActivity(), FoodDataContract.View {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == REQUEST_READ_EXTERNAL_STORAGE && resultCode == Activity.RESULT_OK) {
-            data?.data?.let { presenter.uriToFile(this, it) }
+            data?.data?.let { presenter.getFlaskData(this, File(presenter.resizeFile(this,it)))
+            }
         }
     }
 

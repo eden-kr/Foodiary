@@ -61,10 +61,12 @@ class KcalSettingActivity : AppCompatActivity(),KcalSettingContract.View {
             }
 
         RxView.clicks(back_kcal)
-            .subscribe { finish() }
+            .subscribe { this.finish() }
 
     }
 
+    override fun onBackPressed() {
+    }
 
     override fun setPresenter(presenter: KcalSettingContract.Presenter) {
         this.presenter = presenter

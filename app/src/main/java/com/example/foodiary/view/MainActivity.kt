@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity(), MainContract.View {
         login_facebook.registerCallback(callbackManager,FacebookLoginCallback(this))
 
         login_ok.setOnClickListener {
-            presenter.clickLogin(getEmail(),getPassword(),this)
+            startActivity(Intent(this,EmailLoginActivity::class.java))
         }
         fake_facebook.setOnClickListener {
             login_facebook.performClick()       //Perform
@@ -53,15 +53,6 @@ class MainActivity : AppCompatActivity(), MainContract.View {
     override fun getGoogleLogin(): String {
         return "Google"
     }
-
-    override fun getEmail(): String {
-        return email.text.toString()
-    }
-
-    override fun getPassword(): String {
-        return pw.text.toString()
-    }
-
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)

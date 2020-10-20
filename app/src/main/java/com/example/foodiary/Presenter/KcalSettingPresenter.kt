@@ -1,5 +1,6 @@
 package com.example.foodiary.Presenter
 
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
@@ -60,6 +61,8 @@ class KcalSettingPresenter : KcalSettingContract.Presenter {
         //intent.`package`= "com.example.foodiary.view.FoodDataActivity"
         intent.putExtra("data",data)    //보내줄 데이터
         intent.putExtra("count",count)  //숫자를 증가시킬 카운트
+        val activity = context as Activity
+        activity.finish()
         context.sendBroadcast(intent)
         Log.d("myTag","broadcast send")
     }

@@ -15,20 +15,23 @@ import java.util.concurrent.TimeUnit
 
 //Singleton Retrofit object
 
-object RxRetrofit{
+object RxRetrofit {
     private val url = "http://3.35.37.85:5000"
-    private var retrofit : RetrofitAPI? = null
+    private var retrofit: RetrofitAPI? = null
     private val gson = GsonBuilder()
         .setLenient()
         .create()
-    private val okHttp :OkHttpClient? = OkHttpClient.Builder()
-    .connectTimeout(30, TimeUnit.MINUTES)
-    .readTimeout(30, TimeUnit.SECONDS)
-    .writeTimeout(15, TimeUnit.SECONDS)
-    .build()
 
-    fun getInstance() : RetrofitAPI? {
-        if(retrofit == null) {
+    private val okHttp: OkHttpClient = OkHttpClient.Builder()
+        .connectTimeout(30, TimeUnit.MINUTES)
+        .readTimeout(30, TimeUnit.SECONDS)
+        .writeTimeout(15, TimeUnit.SECONDS)
+        .retryOnConnectionFailure(true)
+        .build()
+
+
+    fun getInstance(): RetrofitAPI? {
+        if (retrofit == null) {
             retrofit = Retrofit.Builder()
                 .baseUrl(url)
                 .client(okHttp)

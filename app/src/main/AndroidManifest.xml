@@ -24,7 +24,9 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
-        <activity android:name=".view.MemoActivity"></activity>
+        <activity android:name=".view.FindPasswordActivity"></activity>
+        <activity android:name=".view.EmailLoginActivity" />
+        <activity android:name=".view.MemoActivity" />
         <activity android:name=".view.CheckFoodListActivity" />
         <activity android:name=".view.StepActivity" />
         <activity android:name=".view.TodayListActivity" />
